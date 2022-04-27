@@ -52,14 +52,14 @@ const createUser = async (req,res)=> {
 const signin = async(req, res)=> {
     const userQuery = await authServices.getUserByEmail(req.body?.email);
     try{
-        if(userQuery?.exist== false) {
+        if(userQuery?.exist=== false) {
             res.status(200).json({
-                success: true, 
+                success: false, 
                 message: "User not registered", 
                 data: {}
             });
         }
-        if(userQuery?.exist== true) {
+        if(userQuery?.exist=== true) {
 
             // Getting User Profile
             const userProfile = await authServices.getUserProfileByUserId(userQuery?.data?._id);

@@ -40,10 +40,8 @@ app.use((req,res,next)=> {
 
 // Routing
 app.use("/api/auth", router.authRouter);
-// app.use("/api/admin", router.adminRouter);
-// app.use("/api/farmer", router.farmerRouter);
-// app.use("/api/asset", router.assetRouter);
-// app.use("/api/consumer", router.consumerRouter);
+app.use("/api/user", router.userRouter);
+app.use("/api/asset", router.assetRouter);
 
 // HTTP SERVER
 const httpServer = app.listen(PORT, (err)=> {
